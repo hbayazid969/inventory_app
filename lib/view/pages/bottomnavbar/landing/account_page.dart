@@ -22,30 +22,35 @@ class _AccountPageState extends State<AccountPage> {
         title: Text('My Account'),
       ),
       body: _accountController.accountData.isNotEmpty ?
-      Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+      ListView(
+        shrinkWrap: true,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
 
-            SizedBox(height: 10.h,),
-            Center(child: Image.network("${_accountController.accountData['imageUrl']}")),
-           SizedBox(height: 20.h,),
-            showUserData(
-              title: "UserName",
-                data: _accountController.accountData['firstName']
-            ),
-            showUserData(
-                title: "Email",
-                data: _accountController.accountData['email']
-            ),
-            showUserData(
-                title: "Phone",
-                data: _accountController.accountData['phone']
-            ),
+                SizedBox(height: 10.h,),
+                Center(child: Image.network("${_accountController.accountData['imageUrl']}")),
+               SizedBox(height: 20.h,),
+                showUserData(
+                  title: "UserName",
+                    data: _accountController.accountData['firstName']
+                ),
+                showUserData(
+                    title: "Email",
+                    data: _accountController.accountData['email']
+                ),
+                showUserData(
+                    title: "Phone",
+                    data: _accountController.accountData['phone']
+                ),
 
-          ],
-        ),
+              ],
+            ),
+          ),
+        ],
       ): Center(
           child: CircularProgressIndicator()
       ),

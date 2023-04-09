@@ -39,12 +39,6 @@ class _CreateProductPageState extends State<CreateProductPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
-                Text("Hello Admin.\nUpload a new Product",style: TextStyle(
-                  fontSize: 18.sp,
-                  letterSpacing: 0.5
-                ),),
-
                 SizedBox(height: 20.h),
                 TextField(
                   decoration: InputDecoration(
@@ -73,7 +67,6 @@ class _CreateProductPageState extends State<CreateProductPage> {
 
                 SizedBox(height: 20.h),
                 TextField(
-                  keyboardType: TextInputType.number,
                   maxLines: 3,
                   decoration: InputDecoration(
                     labelText: 'Description',
