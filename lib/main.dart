@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:inventory_app/view/pages/authentication/login_page.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  await Hive.initFlutter();
+
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,12 +16,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Inventory app',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+    return ScreenUtilInit(
+        designSize: const Size(360, 800),
+    minTextAdapt: true,
+    splitScreenMode: true,
+    builder: (context, child) {
+      return GetMaterialApp(
+          title: 'Inventory app',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          initialRoute: LoginPage.routeName,
+          routes: {
+            LoginPage.routeName: (context) => LoginPage(),
+          }
 
+      );
+    }
     );
   }
 }

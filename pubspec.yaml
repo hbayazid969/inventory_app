@@ -38,6 +38,8 @@ dependencies:
   get:
   hive:
   dio:
+  flutter_screenutil:
+  hive_flutter:
 
 dev_dependencies:
   flutter_test:
