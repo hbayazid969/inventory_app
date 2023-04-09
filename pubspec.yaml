@@ -40,6 +40,7 @@ dependencies:
   dio:
   flutter_screenutil:
   hive_flutter:
+  image_picker:
 
 
 dev_dependencies:
